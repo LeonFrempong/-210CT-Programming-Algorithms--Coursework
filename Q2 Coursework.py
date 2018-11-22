@@ -22,8 +22,7 @@ def tree_insert( tree, item):
                 tree_insert(tree.right,item)
     return tree
 
-    englishNodes_file = open(r"EnglishNodes.txt", "r") # file used for th binary search
-    print(englishNodes_file.read())
+
 
 def postorder(tree):
     if(tree.left!=None):
@@ -42,6 +41,7 @@ def in_order(tree):
 """
 pre_order function outputs the items by following the left tree, then right tree 
 """
+
 def pre_order(tree):
     print(tree.value)
     if tree.left != None:
@@ -50,17 +50,37 @@ def pre_order(tree):
         pre_order(tree.right)
     
 if __name__ == '__main__':
-   
-  t=tree_insert(None,'My');
-  tree_insert(t,'name')
-  tree_insert(t,'is')
-  tree_insert(t,'Leon')
-  tree_insert(t,'Frempong')
-  tree_insert(t,'and')
-  tree_insert(t,'i')
-  tree_insert(t,'am')
-  tree_insert(t,'nineteen')
-  tree_insert(t,'years')
-  tree_insert(t,'old')
+    englishNodes_file = open("EnglishNodes.txt", "r")  # file used for th binary search
+        # print(englishNodes_file.read())
+    message = englishNodes_file.read()
+    print(message)
+    englishNodes_file.close()
+
+    for englishNodes_file in file:
+        fields = englishNodes_file.split(",")
+            
+        fields1 = fields[0]
+        fields2 = fields[1]
+        fields2 = fields[2]
+        fields2 = fields[2]
+        print (fields1 + " " + fields2 + " " + fields3)
+# https://teamtreehouse.com/community/i-get-this-error-message-bummer-typeerror-type-object-is-not-iterable
+
+#implement lists through split
+#iterative 
+
+
+  #t=tree_insert(None,'My');
+  #tree_insert(t,'name')
+  #tree_insert(t,'is')
+  #tree_insert(t,'Leon')
+  #tree_insert(t,'Frempong')
+  #tree_insert(t,'and')
+  #tree_insert(t,'i')
+  #tree_insert(t,'am')
+  #tree_insert(t,'nineteen')
+  #tree_insert(t,'years')
+  #tree_insert(t,'old')
   #in_order(t)
-  pre_order(t)
+
+  #pre_order(t)
