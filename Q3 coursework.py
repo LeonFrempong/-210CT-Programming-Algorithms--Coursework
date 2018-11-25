@@ -1,8 +1,8 @@
 # Undirected, unweighed graph with Adjency Lists
-class vertex:
+class Vertex:
     def __init__(self, n):
         self.name = n
-        self.adjacent = list[ ] #adjacent are connected vertices
+        self.adjacent = list() #adjacent are connected vertices
 
     def add_adjacent(self, node):
         if node not in self.adjacent:
@@ -11,24 +11,24 @@ class vertex:
         
         
 class graph:
-    nodes = {}
+    vertices = {} #vertices is a dtionary, so 
     #adding  a node (vertex) to the graph
     #checks if vertex passed in is actually a vertex object and doesn't exist in the dictionary yet.
-    def add_node(self, node):
-        if  (node,Node) and (node.name) not in self.vertices:
-            self.vertices[node.name] = node
+    def add_node(self, vertex):
+        if  (vertex,Vertex) and (vertex.name) not in self.vertices:
+            self.vertices[vertex.name] = vertex
             return True
         else:
             return False
     #Adding an edge to the graph
     #adding an edge means updating the adjency list of both nodes with the other one
     def add_edge(self, start, end):
-        if (start in self.vertices) and  (end in self.vertices):
-            self.vertices(start).add_adjacent(end)
-            self.vertices(end).add_adjacent(start)  
-            return true
+        if start in self.vertices and end in self.vertices:
+            self.vertices[start].add_adjacent(end)
+            self.vertices[end].add_adjacent(start)  
+            return True
         else:
-            return false
+            return False
 
 
     #c. Printing the graph.
@@ -39,10 +39,14 @@ class graph:
 #visualisation 
 #g = graph(v,e)
 g = graph()
-v = node('1')
+a = Vertex('1')
 g.add_node(a)
-g.add_node(Node('2'))
+g.add_node(Vertex('2'))
 
-for i in range(ord(1))
+for i in range(ord('1'), ord('5')): #it iterates the nodes in the graph
+    g.add_node(Vertex(chr(i)))
 
-edge = [ ['1,2'], ['2,4'], ['3,4'], ['3,5'], ['4,5'] ]
+edges = ['12', '24', '34', '35', '45']
+for edge in edges:
+    g.add_edge(edge[:1], edge[1:])
+g.print_graph()
