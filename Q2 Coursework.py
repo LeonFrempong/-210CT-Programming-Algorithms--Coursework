@@ -56,20 +56,21 @@ if __name__ == '__main__':
     print(message)
     englishNodes_file.close()
 
-    for englishNodes_file in file:
-        fields = englishNodes_file.split(",")
+    #for englishNodes_file in file:
+     #   fields = englishNodes_file.split(",")
             
-        fields1 = fields[0]
-        fields2 = fields[1]
-        fields2 = fields[2]
-        fields2 = fields[2]
-        print (fields1 + " " + fields2 + " " + fields3)
+      #  fields1 = fields[0]
+       # fields2 = fields[1]
+        #fields2 = fields[2]
+        #fields2 = fields[2]
+        #print (fields1 + " " + fields2 + " " + fields3)
 # https://teamtreehouse.com/community/i-get-this-error-message-bummer-typeerror-type-object-is-not-iterable
 
 #implement lists through split
 #iterative 
-
-
+    words = message.split(" ")
+    print(words)
+     for i in range()
   #t=tree_insert(None,'My');
   #tree_insert(t,'name')
   #tree_insert(t,'is')
@@ -81,6 +82,6 @@ if __name__ == '__main__':
   #tree_insert(t,'nineteen')
   #tree_insert(t,'years')
   #tree_insert(t,'old')
-  #in_order(t)
+    in_order(tree)
 
-  #pre_order(t)
+    pre_order(tree)
