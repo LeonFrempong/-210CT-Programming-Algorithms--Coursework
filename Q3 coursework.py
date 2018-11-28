@@ -1,3 +1,5 @@
+edges = ['12', '24', '34', '35', '45']
+
 # Undirected, unweighed graph with Adjency Lists
 class Vertex:
     def __init__(self, n):
@@ -14,9 +16,9 @@ class graph:
     vertices = {} #vertices is a dtionary, so 
     #adding  a node (vertex) to the graph
     #checks if vertex passed in is actually a vertex object and doesn't exist in the dictionary yet.
-    def add_node(self, vertex):
-        if  (vertex,Vertex) and (vertex.name) not in self.vertices:
-            self.vertices[vertex.name] = vertex
+    def add_node(self, node):
+        if  (node,Vertex) and (node.name) not in self.vertices:
+            self.vertices[node.name] = node
             return True
         else:
             return False
@@ -35,18 +37,57 @@ class graph:
     def print_graph(self):
         for key in sorted(list(self.vertices.keys())):
             print(key + str(self.vertices[key].adjacent))
+"""
+    #this function checks whether the graph is strongly connected or not
+def isConnected(g, start, end, nPath = []):
+    if start == end:
+        return nPath
+        print("is connected")
+    else:
+        return None
+"""            
 
-#visualisation 
+#BFS() function
+
+def BREADTH-FIRST-SEARCH(G,v):
+    Q = new Queue()
+    visited = []
+    Q.enqueue(V)
+    while Q is not empty:
+        u = q.dequeue()
+        if u is not in visited:
+            visited.append(u)
+        for all edges, e, from u:
+            Q.enqueue(e.to)
+    return visited 
+        
+
+
+
+#DFS (Depth First Search)function
+
+def DEPTH-FIRST-SEARCH (G, v):
+    S = new Stack()
+    visited = []
+    S.push(v)
+    while S is not empty:
+        u = S.pop()
+        if u is not in visited:
+            visited.append(u)
+            for all adges, e, from u, S.push(e.to)
+    return visited
+
+            #visualisation 
 #g = graph(v,e)
 g = graph()
-a = Vertex('1')
+a = Vertex('0')
 g.add_node(a)
-g.add_node(Vertex('2'))
+g.add_node(Vertex('1'))
 
-for i in range(ord('1'), ord('5')): #it iterates the nodes in the graph
+for i in range(ord('0'), ord('6')): #it iterates the nodes in the graph
     g.add_node(Vertex(chr(i)))
 
-edges = ['12', '24', '34', '35', '45']
 for edge in edges:
     g.add_edge(edge[:1], edge[1:])
 g.print_graph()
+#isConnected(g, start, end, nPath=[])
