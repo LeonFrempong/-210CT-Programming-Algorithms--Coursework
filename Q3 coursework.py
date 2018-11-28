@@ -37,19 +37,36 @@ class graph:
     def print_graph(self):
         for key in sorted(list(self.vertices.keys())):
             print(key + str(self.vertices[key].adjacent))
-"""
+
     #this function checks whether the graph is strongly connected or not
-def isConnected(g, start, end, nPath = []):
-    if start == end:
-        return nPath
-        print("is connected")
-    else:
-        return None
-"""            
+
+    def isPath(self, start, end, path=None):
+        if path == None:
+            path[]
+        graph = self. __graph_dict
+        path = path + [start]
+        if start == end:
+            return path
+        if start not in graph:
+            return None
+        for node in graph[start]:
+        
+
+
+
+
+
+    def isConnected(g, start, end, nPath = []):
+        if Vertex == Vertex:
+            return nPath
+            print("yes")
+        else:
+            print("No")
+"""           
 
 #BFS() function
 
-def BREADTH-FIRST-SEARCH(G,v):
+def BREADTH_FIRST_SEARCH(G,v):
     Q = new Queue()
     visited = []
     Q.enqueue(V)
@@ -66,7 +83,7 @@ def BREADTH-FIRST-SEARCH(G,v):
 
 #DFS (Depth First Search)function
 
-def DEPTH-FIRST-SEARCH (G, v):
+def DEPTH_FIRST_SEARCH(G, v):
     S = new Stack()
     visited = []
     S.push(v)
@@ -76,7 +93,7 @@ def DEPTH-FIRST-SEARCH (G, v):
             visited.append(u)
             for all adges, e, from u, S.push(e.to)
     return visited
-
+"""
             #visualisation 
 #g = graph(v,e)
 g = graph()
@@ -90,4 +107,4 @@ for i in range(ord('0'), ord('6')): #it iterates the nodes in the graph
 for edge in edges:
     g.add_edge(edge[:1], edge[1:])
 g.print_graph()
-#isConnected(g, start, end, nPath=[])
+isConnected()
