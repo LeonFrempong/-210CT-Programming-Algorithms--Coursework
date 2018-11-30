@@ -38,29 +38,40 @@ class graph:
             print(key + str(self.vertices[key].adjacent))
 
     def Depth_first_search(g, start):
-        newStack= []
+        newStack= [] 
         visited = []
-        s.push(start)
+        s.push(start) # vertex in to the list
         while s != empty: 
-            u = s.pop()
+            end = s.pop() #vertex(node) out of the list
             if end not in visited:
-                visited.append(end)
+                visited.append(end)#add vertex at the end of the node to be visited
                 for all edges, e, in end, s.push(e.to):
         return (visited)
 
-    def BREATH_FIRST_SEARCH(g, start):
-        Q = newQueue()
+    def BREADTH_FIRST_SEARCH(g, start):
+        newQueue =() 
         visited=[]
         Q.enqueue(start)
-        while Q !=None:
-            u = q.dequeue()
+        while Q != empty: 
+            end = q.dequeue()
             if end not in visited:
-                visited.append(end)
-            for all edges, e, from u:
+                visited.append(end) # moves to the next vertex
+            for all edges, e, from end:# iterates through edges
                 Q.enqueue(e.to)
         return (visited)
-        
-
+"""
+Title: path function
+#Author: Edd Mann
+#Date: 30/11/2018
+#Availability: https://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
+"""
+      
+    def isPath(g, start, end, path=None):
+        if path == None:
+           path = [start]
+        if start == end:
+           return path
+    
 #open file and write file
     adjacency_list = open("graph_file", "w")
     print (adjacency_list)
@@ -78,5 +89,5 @@ for i in range(ord('0'), ord('6')): #it iterates the nodes in the graph
 for edge in edges:
     g.add_edge(edge[:1], edge[1:])
 g.print_graph()
-BREATH_FIRST_SEARCH(g, start)
+BREADTH_FIRST_SEARCH(g, start)
 Depth_first_search(g, start)
