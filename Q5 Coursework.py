@@ -14,7 +14,6 @@ class Vertex:
         
 class graph:
     vertices = {} #vertices is a dtionary, so 
-    #adding  a node (vertex) to the graph
     #checks if vertex passed in is actually a vertex object and doesn't exist in the dictionary yet.
     def add_node(self, node):
         if  (node,Vertex) and (node.name) not in self.vertices:
@@ -22,7 +21,7 @@ class graph:
             return True
         else:
             return False
-    #Adding an edge to the graph
+        
     #adding an edge means updating the adjency list of both nodes with the other one
     def add_edge(self, start, end):
         if start in self.vertices and end in self.vertices:
@@ -79,3 +78,5 @@ for i in range(ord('0'), ord('6')): #it iterates the nodes in the graph
 for edge in edges:
     g.add_edge(edge[:1], edge[1:])
 g.print_graph()
+BREATH_FIRST_SEARCH(g, start)
+Depth_first_search(g, start)
