@@ -4,6 +4,9 @@ Author: Hintea, D
 Date: 2018
 Availability: http://moodle.coventry.ac.uk 
 """
+
+import unittest
+
 class BinTreeNode(object):
  
     def __init__(self, value):
@@ -49,9 +52,9 @@ pre_order function outputs the items by following the left tree, then right tree
 def pre_order(tree): # this function first outputs the item, follows the left then the right tree
     print(tree.value) # prints the head node
     if (tree.left != None):
-        pre_order(tree.left)#constantly goes left side when there are values 
+        pre_order(tree.left)
     if (tree.right != None):
-        pre_order(tree.right)#constantly goes right where are values 
+        pre_order(tree.right)
 
 
 def FileOpen(): # this function opens and reads the file
@@ -63,9 +66,13 @@ Openfile = FileOpen()
 
 t = tree_insert(None,Openfile[0])
 for i in range(len(Openfile)):#finds the lengths of the file
-      tree_insert(t,Openfile[i])#calls the function 
-pre_order(t) # prints in pre_order 
+      tree_insert(t,Openfile[i])
+pre_order(t) 
 
-
+class testFileOpen(unittest.TestCase):
+    def FileOpenTest(self):
+        openf = open("EnglishNodes.txt" ,"r")
+        self.assertEqual('my'.upper(), 'MY')
+        
     
 
